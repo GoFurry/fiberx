@@ -21,13 +21,13 @@ func New(svc *service.Service) *API {
 }
 
 func (api *API) Create(c *fiber.Ctx) error {
-	if api == nil || api.service == nil {
-		return common.Error(c, fiber.StatusInternalServerError, "user service not initialized")
+	if err := api.ensureService(c); err != nil {
+		return err
 	}
 
 	var input models.CreateUserInput
 	if err := c.BodyParser(&input); err != nil {
-		return common.Error(c, fiber.StatusBadRequest, "invalid request body")
+		return common.NewResponse(c).Error(common.NewValidationError("invalid request body"))
 	}
 
 	user, err := api.service.Create(c.UserContext(), input)
@@ -38,8 +38,8 @@ func (api *API) Create(c *fiber.Ctx) error {
 }
 
 func (api *API) List(c *fiber.Ctx) error {
-	if api == nil || api.service == nil {
-		return common.Error(c, fiber.StatusInternalServerError, "user service not initialized")
+	if err := api.ensureService(c); err != nil {
+		return err
 	}
 
 	pageNum, _ := strconv.Atoi(c.Query("page_num", "1"))
@@ -53,13 +53,13 @@ func (api *API) List(c *fiber.Ctx) error {
 }
 
 func (api *API) Get(c *fiber.Ctx) error {
-	if api == nil || api.service == nil {
-		return common.Error(c, fiber.StatusInternalServerError, "user service not initialized")
+	if err := api.ensureService(c); err != nil {
+		return err
 	}
 
 	id, err := strconv.ParseInt(c.Params("id"), 10, 64)
 	if err != nil {
-		return common.Error(c, fiber.StatusBadRequest, "invalid user id")
+		return common.NewResponse(c).Error(common.NewValidationError("invalid user id"))
 	}
 
 	user, err := api.service.Get(c.UserContext(), id)
@@ -70,18 +70,18 @@ func (api *API) Get(c *fiber.Ctx) error {
 }
 
 func (api *API) Update(c *fiber.Ctx) error {
-	if api == nil || api.service == nil {
-		return common.Error(c, fiber.StatusInternalServerError, "user service not initialized")
+	if err := api.ensureService(c); err != nil {
+		return err
 	}
 
 	id, err := strconv.ParseInt(c.Params("id"), 10, 64)
 	if err != nil {
-		return common.Error(c, fiber.StatusBadRequest, "invalid user id")
+		return common.NewResponse(c).Error(common.NewValidationError("invalid user id"))
 	}
 
 	var input models.UpdateUserInput
 	if err := c.BodyParser(&input); err != nil {
-		return common.Error(c, fiber.StatusBadRequest, "invalid request body")
+		return common.NewResponse(c).Error(common.NewValidationError("invalid request body"))
 	}
 
 	user, err := api.service.Update(c.UserContext(), id, input)
@@ -92,13 +92,13 @@ func (api *API) Update(c *fiber.Ctx) error {
 }
 
 func (api *API) Delete(c *fiber.Ctx) error {
-	if api == nil || api.service == nil {
-		return common.Error(c, fiber.StatusInternalServerError, "user service not initialized")
+	if err := api.ensureService(c); err != nil {
+		return err
 	}
 
 	id, err := strconv.ParseInt(c.Params("id"), 10, 64)
 	if err != nil {
-		return common.Error(c, fiber.StatusBadRequest, "invalid user id")
+		return common.NewResponse(c).Error(common.NewValidationError("invalid user id"))
 	}
 
 	if err := api.service.Delete(c.UserContext(), id); err != nil {
@@ -107,13 +107,24 @@ func (api *API) Delete(c *fiber.Ctx) error {
 	return common.Success(c, fiber.Map{"id": id})
 }
 
+func (api *API) ensureService(c *fiber.Ctx) error {
+	if api == nil || api.service == nil {
+		return common.NewResponse(c).Error(common.NewInternalError(errors.New("user service not initialized")))
+	}
+	return nil
+}
+
 func writeServiceError(c *fiber.Ctx, err error) error {
+	return common.NewResponse(c).Error(mapServiceError(err))
+}
+
+func mapServiceError(err error) common.APIError {
 	switch {
 	case errors.Is(err, service.ErrInvalidUserInput):
-		return common.Error(c, fiber.StatusBadRequest, "invalid user input")
+		return common.NewValidationError("invalid user input")
 	case errors.Is(err, dao.ErrNotFound):
-		return common.Error(c, fiber.StatusNotFound, "user not found")
+		return common.NewError(common.ReturnFailed, fiber.StatusNotFound, "user not found")
 	default:
-		return common.Error(c, fiber.StatusInternalServerError, "request failed")
+		return common.NewInternalError(err)
 	}
 }

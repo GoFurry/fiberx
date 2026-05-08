@@ -53,10 +53,10 @@ func NewApp(deps Dependencies, modules AppModules) *fiber.App {
 				status = fiberErr.Code
 				message = fiberErr.Message
 			} else {
-				var appErr common.AppErrorContract
+				var appErr common.APIError
 				if errors.As(err, &appErr) {
-					status = appErr.GetHTTPStatus()
-					message = appErr.GetMsg()
+					status = appErr.HTTPStatus()
+					message = appErr.Message()
 				}
 			}
 			return common.Error(c, status, message)

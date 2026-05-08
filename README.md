@@ -20,7 +20,7 @@ The repository is intentionally focused on the generator mainline itself: assets
 - `v0.1.1`: completed
 - `v0.1.2`: completed
 - `v0.1.3`: completed
-- `v0.1.4`: next
+- `v0.1.4`: in progress
 
 ## Docs
 
@@ -94,13 +94,14 @@ go run ./cmd/fiberx build --profile prod
 - lightweight explicit service initialization in generated business modules
 - SQLite parent directory creation for default database paths
 
-## v0.1.4 Preview
+## v0.1.4 Current Scope
 
-The next milestone focuses on long-term scaffold maintainability and low-coupling optional capabilities:
+`v0.1.4` is a scaffold-polish milestone focused on the generated common layer:
 
-- continue refining the shared error and response layer
-- evaluate low-coupling additions such as `pprof`, `rate-limit`, and `cors-profile`
-- further reduce brittle template replacement points
+- refine the shared error and response layer for `light`, `medium`, and `heavy`
+- simplify default controller error handling around the common response flow
+- keep `extra-light` intentionally minimal
+- continue hardening generation regressions without expanding the capability surface
 
 ## Build Hook Safety
 

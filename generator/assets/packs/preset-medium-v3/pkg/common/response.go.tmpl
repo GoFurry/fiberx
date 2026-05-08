@@ -13,19 +13,11 @@ type Response struct {
 }
 
 func Success(c fiber.Ctx, data any) error {
-	return c.Status(fiber.StatusOK).JSON(Envelope{
-		Code:    ReturnSuccess,
-		Message: "success",
-		Data:    data,
-	})
+	return NewResponse(c).SuccessWithData(data)
 }
 
 func Error(c fiber.Ctx, status int, message string) error {
-	return c.Status(status).JSON(Envelope{
-		Code:    ReturnFailed,
-		Message: message,
-		Data:    fiber.Map{},
-	})
+	return NewResponse(c).write(status, ReturnFailed, message, fiber.Map{})
 }
 
 func NewResponse(ctx fiber.Ctx) *Response {
@@ -33,7 +25,7 @@ func NewResponse(ctx fiber.Ctx) *Response {
 }
 
 func (r *Response) Success() error {
-	return r.write(fiber.StatusOK, ReturnSuccess, "success", nil)
+	return r.SuccessWithData(nil)
 }
 
 func (r *Response) SuccessWithData(data any) error {
@@ -42,12 +34,12 @@ func (r *Response) SuccessWithData(data any) error {
 
 func (r *Response) Error(data any) error {
 	appErr := normalizeError(data)
-	return r.write(appErr.GetHTTPStatus(), appErr.GetErrorCode(), appErr.GetMsg(), nil)
+	return r.write(appErr.HTTPStatus(), appErr.Code(), appErr.Message(), nil)
 }
 
 func (r *Response) ErrorWithCode(data any, status int) error {
 	appErr := normalizeError(data)
-	return r.write(status, appErr.GetErrorCode(), appErr.GetMsg(), nil)
+	return r.write(status, appErr.Code(), appErr.Message(), nil)
 }
 
 func (r *Response) write(status, code int, message string, data any) error {
@@ -58,16 +50,16 @@ func (r *Response) write(status, code int, message string, data any) error {
 	})
 }
 
-func normalizeError(data any) AppErrorContract {
+func normalizeError(data any) APIError {
 	switch value := data.(type) {
 	case nil:
 		return NewServiceError("request failed")
-	case AppErrorContract:
+	case APIError:
 		return value
 	case error:
-		return NewServiceError("request failed")
+		return NewInternalError(value)
 	case string:
-		return NewServiceError("request failed")
+		return NewServiceError(value)
 	default:
 		return NewServiceError("request failed")
 	}

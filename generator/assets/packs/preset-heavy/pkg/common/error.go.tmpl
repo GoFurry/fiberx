@@ -2,24 +2,26 @@ package common
 
 import "net/http"
 
-type AppErrorContract interface {
+type APIError interface {
 	error
-	GetErrorCode() int
-	GetMsg() string
-	GetHTTPStatus() int
+	Code() int
+	Message() string
+	HTTPStatus() int
+	Unwrap() error
 }
 
 type AppError struct {
-	errorCode  int
+	code       int
 	httpStatus int
-	msg        string
+	message    string
+	cause      error
 }
 
 func NewError(errorCode, httpStatus int, msg string) *AppError {
 	return &AppError{
-		errorCode:  errorCode,
+		code:       errorCode,
 		httpStatus: httpStatus,
-		msg:        msg,
+		message:    msg,
 	}
 }
 
@@ -35,18 +37,28 @@ func NewValidationError(msg string) *AppError {
 	return NewError(ReturnFailed, http.StatusBadRequest, msg)
 }
 
+func NewInternalError(err error) *AppError {
+	appErr := NewError(ReturnFailed, http.StatusInternalServerError, "request failed")
+	appErr.cause = err
+	return appErr
+}
+
 func (e AppError) Error() string {
-	return e.msg
+	return e.message
 }
 
-func (e AppError) GetErrorCode() int {
-	return e.errorCode
+func (e AppError) Code() int {
+	return e.code
 }
 
-func (e AppError) GetMsg() string {
-	return e.msg
+func (e AppError) Message() string {
+	return e.message
 }
 
-func (e AppError) GetHTTPStatus() int {
+func (e AppError) HTTPStatus() int {
 	return e.httpStatus
+}
+
+func (e AppError) Unwrap() error {
+	return e.cause
 }

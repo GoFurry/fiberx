@@ -10,6 +10,7 @@
 - `v0.1.1`：已完成
 - `v0.1.2`：已完成
 - `v0.1.3`：已完成
+- `v0.1.4`：进行中
 
 当前主线已经具备这些稳定能力：
 
@@ -39,21 +40,20 @@
 
 ## v0.1.4
 
-`v0.1.4` 聚焦默认骨架的长期可维护性，以及少量低耦合能力扩展：
+`v0.1.4` 聚焦默认骨架公共层收口，不引入新的 capability：
 
-- 继续打磨 `pkg/common` 的错误模型与响应层
-- 评估 `pprof`、`rate-limit`、`cors-profile` 进入主线的优先级
-- 继续减少模板中的脆弱替换点，增强生成回归
-- 评估更清晰的项目医生输出与发布前检查体验
+- 收口 `light / medium / heavy` 的 `pkg/common/error.go`
+- 统一 `pkg/common/response.go` 的双入口写法与错误桥接
+- 清理默认 controller 的错误分支，统一走共享错误/响应层
+- 保持 `extra-light` 最小化，不强行吸收更重的公共层
+- 持续补强生成回归，确保默认 CRUD、health、swagger、embedded-ui、metrics 行为不回退
 
-## v0.2.0
+明确不在这一版推进：
 
-`v0.2.0` 的目标是把 `fiberx` 从一次性生成器推进为可持续升级工具：
-
-- 在 `inspect / diff / upgrade plan` 基础上推进保守升级执行
-- 支持 `upgrade apply --dry-run`
-- 优先只更新未被用户修改的 managed files
-- 为冲突场景生成 review 文件或 patch
+- `pprof`
+- `rate-limit`
+- `cors-profile`
+- 模板系统内部的大规模重构
 
 ## 后续能力方向
 

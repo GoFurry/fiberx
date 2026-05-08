@@ -16,7 +16,8 @@
 - `v0.1.0`：已完成
 - `v0.1.1`：已完成
 - `v0.1.2`：已完成
-- `v0.1.3`：进行中
+- `v0.1.3`：已完成
+- `v0.1.4`：进行中
 
 ## 文档入口
 
@@ -75,23 +76,21 @@ go run ./cmd/fiberx build --profile prod
 - `sample/`：参考快照和测试对照，不是当前正式维护的 generator 主线
 - `output/`：本地生成产物与临时二进制目录，除 `.gitkeep` 外默认不纳入 Git
 
-## v0.1.3 当前范围
+## v0.1.4 当前范围
 
-`v0.1.3` 聚焦 CLI 体验、构建安全边界和骨架修补：
+`v0.1.4` 聚焦默认骨架公共层收口：
 
-- 生成前预览：`new/init --print-plan [--json]`
-- 构建安全开关：`build --no-hooks`、`build --yes`
-- `doctor` 自动区分 generator / project / standalone
-- `explain matrix` 输出 preset 与 capability 支持矩阵
-- 生成骨架默认错误响应脱敏
-- `timeout` 对多 handler 链完整覆盖
+- 统一 `light / medium / heavy` 的 `pkg/common/error.go`
+- 统一 `pkg/common/response.go` 的响应写出路径
+- 清理默认 controller 的重复错误分支
+- 保持 `extra-light` 最小面，不跟随这一版变重
 
 ## Build Hook 安全提示
 
 - `fiberx build` 可能执行项目自定义 hooks
 - 只应在你信任的仓库中执行这些 hooks
 - 可以先用 `fiberx build --dry-run` 查看计划
-- 有 hooks 的构建默认会要求确认，非交互环境下请显式使用 `--yes` 或 `--no-hooks`
+- 有 hooks 的构建默认会要求确认；非交互环境下请显式使用 `--yes` 或 `--no-hooks`
 
 ## License
 
