@@ -45,6 +45,7 @@
 - 收口 `light / medium / heavy` 的 `pkg/common/error.go`
 - 统一 `pkg/common/response.go` 的双入口写法与错误桥接
 - 清理默认 controller 的错误分支，统一走共享错误/响应层
+- 调整业务路由入口，让 `api(...)` 接收 `AppModules`，避免顶层路由随业务数量膨胀
 - 保持 `extra-light` 最小化，不强行吸收更重的公共层
 - 持续补强生成回归，确保默认 CRUD、health、swagger、embedded-ui、metrics 行为不回退
 

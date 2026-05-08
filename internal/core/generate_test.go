@@ -162,8 +162,9 @@ func TestRunSupportsV1PresetMatrix(t *testing.T) {
 				}
 				assertGeneratedFileContains(t, targetDir, filepath.Join("internal", "transport", "http", "router", "router.go"), `type AppModules struct`)
 				assertGeneratedFileContains(t, targetDir, filepath.Join("internal", "transport", "http", "router", "router.go"), `func NewApp(deps Dependencies, modules AppModules)`)
-				assertGeneratedFileContains(t, targetDir, filepath.Join("internal", "transport", "http", "router", "url.go"), `func api(root fiber.Router, userAPI *usercontroller.API)`)
-				assertGeneratedFileContains(t, targetDir, filepath.Join("internal", "transport", "http", "router", "url.go"), `func v1(root fiber.Router, userAPI *usercontroller.API)`)
+				assertGeneratedFileContains(t, targetDir, filepath.Join("internal", "transport", "http", "router", "router.go"), `api(wrapTimeoutRouter(app.Group("/api"), deps.Config.Middleware.Timeout), modules)`)
+				assertGeneratedFileContains(t, targetDir, filepath.Join("internal", "transport", "http", "router", "url.go"), `func api(root fiber.Router, modules AppModules)`)
+				assertGeneratedFileContains(t, targetDir, filepath.Join("internal", "transport", "http", "router", "url.go"), `func v1(root fiber.Router, modules AppModules)`)
 				assertGeneratedFileContains(t, targetDir, filepath.Join("internal", "transport", "http", "router", "url.go"), `func userRoutes(root fiber.Router, userAPI *usercontroller.API)`)
 				assertGeneratedFileContains(t, targetDir, filepath.Join("internal", "transport", "http", "router", "url.go"), `root.Post("/", userAPI.Create)`)
 				assertGeneratedFileNotContains(t, targetDir, filepath.Join("internal", "transport", "http", "router", "url.go"), `UserBasePath = "/api/v1/user"`)

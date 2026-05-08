@@ -83,6 +83,7 @@ go run ./cmd/fiberx build --profile prod
 - 统一 `light / medium / heavy` 的 `pkg/common/error.go`
 - 统一 `pkg/common/response.go` 的响应写出路径
 - 清理默认 controller 的重复错误分支
+- 调整业务路由入口，让 `api(...)` 接收 `AppModules`
 - 保持 `extra-light` 最小面，不跟随这一版变重
 
 ## Build Hook 安全提示

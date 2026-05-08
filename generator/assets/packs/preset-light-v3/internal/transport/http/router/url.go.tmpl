@@ -5,15 +5,15 @@ import (
 	"github.com/gofiber/fiber/v3"
 )
 
-func api(root fiber.Router, userAPI *usercontroller.API) {
-	if userAPI == nil {
+func api(root fiber.Router, modules AppModules) {
+	if modules.UserAPI == nil {
 		return
 	}
-	v1(root.Group("/v1"), userAPI)
+	v1(root.Group("/v1"), modules)
 }
 
-func v1(root fiber.Router, userAPI *usercontroller.API) {
-	userRoutes(root.Group("/user"), userAPI)
+func v1(root fiber.Router, modules AppModules) {
+	userRoutes(root.Group("/user"), modules.UserAPI)
 }
 
 func userRoutes(root fiber.Router, userAPI *usercontroller.API) {

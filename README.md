@@ -100,6 +100,7 @@ go run ./cmd/fiberx build --profile prod
 
 - refine the shared error and response layer for `light`, `medium`, and `heavy`
 - simplify default controller error handling around the common response flow
+- route top-level API registration through `AppModules` to avoid growth-driven router sprawl
 - keep `extra-light` intentionally minimal
 - continue hardening generation regressions without expanding the capability surface
 
