@@ -7,9 +7,9 @@ import (
 	"sync"
 	"time"
 
-	env "github.com/GoFurry/fiberx/v3/heavy/config"
-	cs "github.com/GoFurry/fiberx/v3/heavy/internal/infra/cache"
-	log "github.com/GoFurry/fiberx/v3/heavy/internal/infra/logging"
+	env "github.com/gofurry/fiberx/v3/heavy/config"
+	cs "github.com/gofurry/fiberx/v3/heavy/internal/infra/cache"
+	log "github.com/gofurry/fiberx/v3/heavy/internal/infra/logging"
 
 	"github.com/prometheus/client_golang/api"
 	v1 "github.com/prometheus/client_golang/api/prometheus/v1"

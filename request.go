@@ -1,5 +1,5 @@
 package fiberx
 
-import "github.com/GoFurry/fiberx/internal/core"
+import "github.com/gofurry/fiberx/internal/core"
 
 type Request = core.Request

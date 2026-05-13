@@ -1,4 +1,4 @@
-module github.com/GoFurry/fiberx/v3/extra-light
+module github.com/gofurry/fiberx/v3/extra-light
 
 go 1.26.0
 

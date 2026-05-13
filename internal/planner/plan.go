@@ -1,8 +1,8 @@
 package planner
 
 import (
-	"github.com/GoFurry/fiberx/internal/manifest"
-	"github.com/GoFurry/fiberx/internal/stack"
+	"github.com/gofurry/fiberx/internal/manifest"
+	"github.com/gofurry/fiberx/internal/stack"
 )
 
 type AssetSelection struct {

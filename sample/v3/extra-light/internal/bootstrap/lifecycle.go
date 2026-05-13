@@ -7,8 +7,8 @@ import (
 	"sync"
 	"sync/atomic"
 
-	env "github.com/GoFurry/fiberx/v3/extra-light/config"
-	"github.com/GoFurry/fiberx/v3/extra-light/internal/db"
+	env "github.com/gofurry/fiberx/v3/extra-light/config"
+	"github.com/gofurry/fiberx/v3/extra-light/internal/db"
 )
 
 var (

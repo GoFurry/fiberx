@@ -1,6 +1,6 @@
 package main
 
-import "github.com/GoFurry/fiberx/v3/light/cmd"
+import "github.com/gofurry/fiberx/v3/light/cmd"
 
 func main() {
 	cmd.Execute()

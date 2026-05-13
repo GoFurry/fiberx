@@ -12,7 +12,7 @@ import (
 	"sync"
 	"time"
 
-	env "github.com/GoFurry/fiberx/v3/medium/config"
+	env "github.com/gofurry/fiberx/v3/medium/config"
 	"github.com/glebarez/sqlite"
 	"gorm.io/driver/mysql"
 	"gorm.io/driver/postgres"

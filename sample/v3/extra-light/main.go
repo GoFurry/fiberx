@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/GoFurry/fiberx/v3/extra-light/cmd"
+	"github.com/gofurry/fiberx/v3/extra-light/cmd"
 )
 
 func main() {

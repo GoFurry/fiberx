@@ -3,8 +3,8 @@ package planner
 import (
 	"testing"
 
-	"github.com/GoFurry/fiberx/internal/manifest"
-	"github.com/GoFurry/fiberx/internal/validator"
+	"github.com/gofurry/fiberx/internal/manifest"
+	"github.com/gofurry/fiberx/internal/validator"
 )
 
 func TestBuildPlanSelectsMediumRedisAssetsAndRules(t *testing.T) {

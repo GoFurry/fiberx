@@ -1,4 +1,4 @@
-module github.com/GoFurry/fiberx
+module github.com/gofurry/fiberx
 
 go 1.26.0
 

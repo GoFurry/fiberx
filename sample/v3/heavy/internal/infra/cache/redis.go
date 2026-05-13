@@ -7,9 +7,9 @@ import (
 	"strings"
 	"time"
 
-	env "github.com/GoFurry/fiberx/v3/heavy/config"
-	log "github.com/GoFurry/fiberx/v3/heavy/internal/infra/logging"
-	"github.com/GoFurry/fiberx/v3/heavy/pkg/common"
+	env "github.com/gofurry/fiberx/v3/heavy/config"
+	log "github.com/gofurry/fiberx/v3/heavy/internal/infra/logging"
+	"github.com/gofurry/fiberx/v3/heavy/pkg/common"
 	goredis "github.com/redis/go-redis/v9"
 )
 

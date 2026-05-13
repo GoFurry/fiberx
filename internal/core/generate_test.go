@@ -14,8 +14,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/GoFurry/fiberx/internal/metadata"
-	"github.com/GoFurry/fiberx/internal/stack"
+	"github.com/gofurry/fiberx/internal/metadata"
+	"github.com/gofurry/fiberx/internal/stack"
 )
 
 func TestRunSupportsV1PresetMatrix(t *testing.T) {

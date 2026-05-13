@@ -7,12 +7,12 @@ import (
 	"sync"
 	"sync/atomic"
 
-	env "github.com/GoFurry/fiberx/v3/medium/config"
-	usermodels "github.com/GoFurry/fiberx/v3/medium/internal/app/user/models"
-	cache "github.com/GoFurry/fiberx/v3/medium/internal/infra/cache"
-	"github.com/GoFurry/fiberx/v3/medium/internal/infra/db"
-	log "github.com/GoFurry/fiberx/v3/medium/internal/infra/logging"
-	"github.com/GoFurry/fiberx/v3/medium/pkg/common"
+	env "github.com/gofurry/fiberx/v3/medium/config"
+	usermodels "github.com/gofurry/fiberx/v3/medium/internal/app/user/models"
+	cache "github.com/gofurry/fiberx/v3/medium/internal/infra/cache"
+	"github.com/gofurry/fiberx/v3/medium/internal/infra/db"
+	log "github.com/gofurry/fiberx/v3/medium/internal/infra/logging"
+	"github.com/gofurry/fiberx/v3/medium/pkg/common"
 	fibercoraza "github.com/gofiber/contrib/v3/coraza"
 )
 

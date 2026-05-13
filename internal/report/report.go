@@ -1,9 +1,9 @@
 package report
 
 import (
-	"github.com/GoFurry/fiberx/internal/planner"
-	"github.com/GoFurry/fiberx/internal/renderer"
-	"github.com/GoFurry/fiberx/internal/writer"
+	"github.com/gofurry/fiberx/internal/planner"
+	"github.com/gofurry/fiberx/internal/renderer"
+	"github.com/gofurry/fiberx/internal/writer"
 )
 
 type Summary struct {

@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	env "github.com/GoFurry/fiberx/v3/extra-light/config"
+	env "github.com/gofurry/fiberx/v3/extra-light/config"
 )
 
 var logFile *os.File

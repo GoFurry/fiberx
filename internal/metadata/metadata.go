@@ -12,14 +12,14 @@ import (
 	"sync"
 	"time"
 
-	"github.com/GoFurry/fiberx/internal/manifest"
-	"github.com/GoFurry/fiberx/internal/planner"
-	"github.com/GoFurry/fiberx/internal/postprocess"
-	"github.com/GoFurry/fiberx/internal/renderer"
-	"github.com/GoFurry/fiberx/internal/stack"
-	"github.com/GoFurry/fiberx/internal/validator"
-	"github.com/GoFurry/fiberx/internal/version"
-	"github.com/GoFurry/fiberx/internal/writer"
+	"github.com/gofurry/fiberx/internal/manifest"
+	"github.com/gofurry/fiberx/internal/planner"
+	"github.com/gofurry/fiberx/internal/postprocess"
+	"github.com/gofurry/fiberx/internal/renderer"
+	"github.com/gofurry/fiberx/internal/stack"
+	"github.com/gofurry/fiberx/internal/validator"
+	"github.com/gofurry/fiberx/internal/version"
+	"github.com/gofurry/fiberx/internal/writer"
 )
 
 const (

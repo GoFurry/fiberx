@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	log "github.com/GoFurry/fiberx/v3/heavy/internal/infra/logging"
+	log "github.com/gofurry/fiberx/v3/heavy/internal/infra/logging"
 	"github.com/rfyiamcool/go-timewheel"
 )
 

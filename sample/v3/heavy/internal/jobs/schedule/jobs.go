@@ -3,8 +3,8 @@ package schedule
 import (
 	"time"
 
-	env "github.com/GoFurry/fiberx/v3/heavy/config"
-	"github.com/GoFurry/fiberx/v3/heavy/internal/jobs/schedule/task"
+	env "github.com/gofurry/fiberx/v3/heavy/config"
+	"github.com/gofurry/fiberx/v3/heavy/internal/jobs/schedule/task"
 )
 
 type Job struct {

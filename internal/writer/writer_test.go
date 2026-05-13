@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/GoFurry/fiberx/internal/renderer"
+	"github.com/gofurry/fiberx/internal/renderer"
 )
 
 func TestWriteRefusesOverwrite(t *testing.T) {

@@ -1,4 +1,4 @@
-module github.com/GoFurry/fiberx/addons/redis
+module github.com/gofurry/fiberx/addons/redis
 
 go 1.26.0
 

@@ -1,6 +1,6 @@
 package abstract
 
-import "github.com/GoFurry/fiberx/v3/heavy/pkg/util"
+import "github.com/gofurry/fiberx/v3/heavy/pkg/util"
 
 type Model interface {
 	GetId() int64

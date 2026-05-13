@@ -1,9 +1,9 @@
 # fiberx
 
 ![License](https://img.shields.io/badge/License-MIT-6C757D?style=flat&color=3B82F6)
-![Release](https://img.shields.io/github/v/release/GoFurry/fiberx?style=flat&color=blue)
+![Release](https://img.shields.io/github/v/release/gofurry/fiberx?style=flat&color=blue)
 ![Go Version](https://img.shields.io/badge/Go-1.26%2B-00ADD8?style=flat&logo=go&logoColor=white)
-[![Go Report Card](https://goreportcard.com/badge/github.com/GoFurry/fiberx)](https://goreportcard.com/report/github.com/GoFurry/fiberx)
+[![Go Report Card](https://goreportcard.com/badge/github.com/gofurry/fiberx)](https://goreportcard.com/report/github.com/gofurry/fiberx)
 
 ![Weekend Project](https://img.shields.io/badge/weekend-project-8B5CF6?style=flat)
 ![Made with Love](https://img.shields.io/badge/made%20with-%E2%9D%A4-E11D48?style=flat&color=orange)

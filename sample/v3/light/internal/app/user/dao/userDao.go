@@ -5,9 +5,9 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/GoFurry/fiberx/v3/light/internal/app/user/models"
-	"github.com/GoFurry/fiberx/v3/light/internal/infra/db"
-	"github.com/GoFurry/fiberx/v3/light/pkg/common"
+	"github.com/gofurry/fiberx/v3/light/internal/app/user/models"
+	"github.com/gofurry/fiberx/v3/light/internal/infra/db"
+	"github.com/gofurry/fiberx/v3/light/pkg/common"
 	"gorm.io/gorm"
 )
 

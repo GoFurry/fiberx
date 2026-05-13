@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"log/slog"
 
-	database "github.com/GoFurry/fiberx/v3/medium/internal/infra/db"
-	"github.com/GoFurry/fiberx/v3/medium/pkg/common"
-	"github.com/GoFurry/fiberx/v3/medium/pkg/models"
+	database "github.com/gofurry/fiberx/v3/medium/internal/infra/db"
+	"github.com/gofurry/fiberx/v3/medium/pkg/common"
+	"github.com/gofurry/fiberx/v3/medium/pkg/models"
 	"gorm.io/gorm"
 )
 

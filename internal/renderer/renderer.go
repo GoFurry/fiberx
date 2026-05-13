@@ -7,8 +7,8 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/GoFurry/fiberx/internal/manifest"
-	"github.com/GoFurry/fiberx/internal/planner"
+	"github.com/gofurry/fiberx/internal/manifest"
+	"github.com/gofurry/fiberx/internal/planner"
 )
 
 type File struct {

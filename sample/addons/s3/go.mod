@@ -1,4 +1,4 @@
-module github.com/GoFurry/fiberx/addons/s3
+module github.com/gofurry/fiberx/addons/s3
 
 go 1.26.0
 

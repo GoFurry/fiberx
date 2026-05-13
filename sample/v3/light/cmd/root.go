@@ -5,8 +5,8 @@ import (
 	"log/slog"
 	"os"
 
-	env "github.com/GoFurry/fiberx/v3/light/config"
-	"github.com/GoFurry/fiberx/v3/light/pkg/common"
+	env "github.com/gofurry/fiberx/v3/light/config"
+	"github.com/gofurry/fiberx/v3/light/pkg/common"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )

@@ -43,7 +43,7 @@ import (
 	"context"
 	"log"
 
-	addonredis "github.com/GoFurry/fiberx/addons/redis"
+	addonredis "github.com/gofurry/fiberx/addons/redis"
 )
 
 func main() {

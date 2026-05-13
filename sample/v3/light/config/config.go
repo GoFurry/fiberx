@@ -10,7 +10,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/GoFurry/fiberx/v3/light/pkg/common"
+	"github.com/gofurry/fiberx/v3/light/pkg/common"
 	"github.com/spf13/viper"
 	"gopkg.in/yaml.v2"
 )

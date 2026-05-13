@@ -7,7 +7,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/GoFurry/fiberx/v3/extra-light/pkg/common"
+	"github.com/gofurry/fiberx/v3/extra-light/pkg/common"
 	"gopkg.in/yaml.v2"
 )
 

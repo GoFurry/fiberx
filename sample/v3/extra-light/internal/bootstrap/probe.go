@@ -1,6 +1,6 @@
 package bootstrap
 
-import "github.com/GoFurry/fiberx/v3/extra-light/internal/db"
+import "github.com/gofurry/fiberx/v3/extra-light/internal/db"
 
 func Live() bool {
 	return true

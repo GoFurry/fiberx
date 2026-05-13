@@ -1,4 +1,4 @@
-module github.com/GoFurry/fiberx/addons/migrate
+module github.com/gofurry/fiberx/addons/migrate
 
 go 1.26.0
 

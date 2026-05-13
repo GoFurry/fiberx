@@ -27,7 +27,7 @@ import (
 	"context"
 	"log"
 
-	addonmongo "github.com/GoFurry/fiberx/addons/mongodb"
+	addonmongo "github.com/gofurry/fiberx/addons/mongodb"
 )
 
 type User struct {

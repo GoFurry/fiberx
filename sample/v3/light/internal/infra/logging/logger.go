@@ -7,7 +7,7 @@ import (
 	"runtime"
 	"time"
 
-	"github.com/GoFurry/fiberx/v3/light/pkg/common"
+	"github.com/gofurry/fiberx/v3/light/pkg/common"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 	"gopkg.in/natefinch/lumberjack.v2"

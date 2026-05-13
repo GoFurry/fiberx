@@ -7,9 +7,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/GoFurry/fiberx/internal/core"
-	"github.com/GoFurry/fiberx/internal/metadata"
-	"github.com/GoFurry/fiberx/internal/version"
+	"github.com/gofurry/fiberx/internal/core"
+	"github.com/gofurry/fiberx/internal/metadata"
+	"github.com/gofurry/fiberx/internal/version"
 )
 
 func TestAssessCompatibleCleanAndPlan(t *testing.T) {

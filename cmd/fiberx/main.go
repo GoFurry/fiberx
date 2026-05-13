@@ -13,16 +13,16 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/GoFurry/fiberx/internal/build"
-	"github.com/GoFurry/fiberx/internal/buildconfig"
-	"github.com/GoFurry/fiberx/internal/core"
-	"github.com/GoFurry/fiberx/internal/manifest"
-	"github.com/GoFurry/fiberx/internal/metadata"
-	"github.com/GoFurry/fiberx/internal/report"
-	"github.com/GoFurry/fiberx/internal/stack"
-	"github.com/GoFurry/fiberx/internal/upgrade"
-	"github.com/GoFurry/fiberx/internal/validator"
-	"github.com/GoFurry/fiberx/internal/version"
+	"github.com/gofurry/fiberx/internal/build"
+	"github.com/gofurry/fiberx/internal/buildconfig"
+	"github.com/gofurry/fiberx/internal/core"
+	"github.com/gofurry/fiberx/internal/manifest"
+	"github.com/gofurry/fiberx/internal/metadata"
+	"github.com/gofurry/fiberx/internal/report"
+	"github.com/gofurry/fiberx/internal/stack"
+	"github.com/gofurry/fiberx/internal/upgrade"
+	"github.com/gofurry/fiberx/internal/validator"
+	"github.com/gofurry/fiberx/internal/version"
 )
 
 const (

@@ -1,4 +1,4 @@
-module github.com/GoFurry/fiberx/v3/heavy
+module github.com/gofurry/fiberx/v3/heavy
 
 go 1.26.1
 

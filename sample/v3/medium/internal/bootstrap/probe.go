@@ -1,9 +1,9 @@
 package bootstrap
 
 import (
-	env "github.com/GoFurry/fiberx/v3/medium/config"
-	cache "github.com/GoFurry/fiberx/v3/medium/internal/infra/cache"
-	"github.com/GoFurry/fiberx/v3/medium/internal/infra/db"
+	env "github.com/gofurry/fiberx/v3/medium/config"
+	cache "github.com/gofurry/fiberx/v3/medium/internal/infra/cache"
+	"github.com/gofurry/fiberx/v3/medium/internal/infra/db"
 )
 
 func Live() bool {

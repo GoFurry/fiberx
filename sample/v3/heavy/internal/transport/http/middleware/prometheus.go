@@ -6,9 +6,9 @@ import (
 	"strings"
 	"time"
 
-	log "github.com/GoFurry/fiberx/v3/heavy/internal/infra/logging"
-	"github.com/GoFurry/fiberx/v3/heavy/internal/infra/observability/metrics"
-	"github.com/GoFurry/fiberx/v3/heavy/pkg/common"
+	log "github.com/gofurry/fiberx/v3/heavy/internal/infra/logging"
+	"github.com/gofurry/fiberx/v3/heavy/internal/infra/observability/metrics"
+	"github.com/gofurry/fiberx/v3/heavy/pkg/common"
 	"github.com/gofiber/fiber/v3"
 	"github.com/gofiber/fiber/v3/middleware/adaptor"
 	"github.com/gofiber/utils/v2"

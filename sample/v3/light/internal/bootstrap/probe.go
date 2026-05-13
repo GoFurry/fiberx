@@ -1,8 +1,8 @@
 package bootstrap
 
 import (
-	env "github.com/GoFurry/fiberx/v3/light/config"
-	"github.com/GoFurry/fiberx/v3/light/internal/infra/db"
+	env "github.com/gofurry/fiberx/v3/light/config"
+	"github.com/gofurry/fiberx/v3/light/internal/infra/db"
 )
 
 func Live() bool {

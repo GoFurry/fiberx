@@ -5,8 +5,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/GoFurry/fiberx/internal/manifest"
-	"github.com/GoFurry/fiberx/internal/stack"
+	"github.com/gofurry/fiberx/internal/manifest"
+	"github.com/gofurry/fiberx/internal/stack"
 )
 
 func ValidateCatalog(catalog manifest.Catalog) error {

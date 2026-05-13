@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"os"
 
-	env "github.com/GoFurry/fiberx/v3/extra-light/config"
-	"github.com/GoFurry/fiberx/v3/extra-light/internal/bootstrap"
-	apphttp "github.com/GoFurry/fiberx/v3/extra-light/internal/http"
-	"github.com/GoFurry/fiberx/v3/extra-light/pkg/common"
+	env "github.com/gofurry/fiberx/v3/extra-light/config"
+	"github.com/gofurry/fiberx/v3/extra-light/internal/bootstrap"
+	apphttp "github.com/gofurry/fiberx/v3/extra-light/internal/http"
+	"github.com/gofurry/fiberx/v3/extra-light/pkg/common"
 )
 
 func Execute(args []string) int {

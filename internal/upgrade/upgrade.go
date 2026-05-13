@@ -7,8 +7,8 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/GoFurry/fiberx/internal/metadata"
-	"github.com/GoFurry/fiberx/internal/version"
+	"github.com/gofurry/fiberx/internal/metadata"
+	"github.com/gofurry/fiberx/internal/version"
 )
 
 const (

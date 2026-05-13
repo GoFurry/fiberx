@@ -7,14 +7,14 @@ import (
 	"sync"
 	"sync/atomic"
 
-	env "github.com/GoFurry/fiberx/v3/heavy/config"
-	usermodels "github.com/GoFurry/fiberx/v3/heavy/internal/app/user/models"
-	cache "github.com/GoFurry/fiberx/v3/heavy/internal/infra/cache"
-	"github.com/GoFurry/fiberx/v3/heavy/internal/infra/db"
-	log "github.com/GoFurry/fiberx/v3/heavy/internal/infra/logging"
-	scheduler "github.com/GoFurry/fiberx/v3/heavy/internal/infra/scheduler"
-	"github.com/GoFurry/fiberx/v3/heavy/internal/jobs/schedule"
-	"github.com/GoFurry/fiberx/v3/heavy/pkg/common"
+	env "github.com/gofurry/fiberx/v3/heavy/config"
+	usermodels "github.com/gofurry/fiberx/v3/heavy/internal/app/user/models"
+	cache "github.com/gofurry/fiberx/v3/heavy/internal/infra/cache"
+	"github.com/gofurry/fiberx/v3/heavy/internal/infra/db"
+	log "github.com/gofurry/fiberx/v3/heavy/internal/infra/logging"
+	scheduler "github.com/gofurry/fiberx/v3/heavy/internal/infra/scheduler"
+	"github.com/gofurry/fiberx/v3/heavy/internal/jobs/schedule"
+	"github.com/gofurry/fiberx/v3/heavy/pkg/common"
 	fibercoraza "github.com/gofiber/contrib/v3/coraza"
 )
 

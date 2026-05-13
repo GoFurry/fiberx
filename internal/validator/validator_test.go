@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/GoFurry/fiberx/internal/manifest"
+	"github.com/gofurry/fiberx/internal/manifest"
 )
 
 func TestValidateCatalogRejectsDuplicatePreset(t *testing.T) {

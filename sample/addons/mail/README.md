@@ -29,7 +29,7 @@ import (
 	"context"
 	"log"
 
-	addonmail "github.com/GoFurry/fiberx/addons/mail"
+	addonmail "github.com/gofurry/fiberx/addons/mail"
 )
 
 func main() {

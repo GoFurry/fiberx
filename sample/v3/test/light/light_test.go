@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/GoFurry/fiberx/v3/test/internaltest"
+	"github.com/gofurry/fiberx/v3/test/internaltest"
 )
 
 func TestLightTemplateBlackBox(t *testing.T) {

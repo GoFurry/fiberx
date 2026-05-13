@@ -11,7 +11,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/GoFurry/fiberx/internal/version"
+	"github.com/gofurry/fiberx/internal/version"
 )
 
 func TestCLIOutputsV1SupportMatrix(t *testing.T) {
