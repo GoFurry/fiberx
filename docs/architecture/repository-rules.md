@@ -12,6 +12,7 @@ These rules keep `fiberx` maintainable as a long-lived generator repository.
 
 - Generator assets under `generator/` are the maintained source of truth for scaffolding behavior.
 - Runtime options, capability policy, metadata, upgrade inspection, and build engineering must evolve inside the generator mainline.
+- `sample/` is reference-only output, not a second source of truth.
 - Do not reintroduce parallel repository-local legacy systems as a second maintenance surface.
 
 ## Documentation Rules
@@ -23,9 +24,10 @@ These rules keep `fiberx` maintainable as a long-lived generator repository.
 
 ## Quality Rules
 
-- Root `go test ./...` is the primary regression entrypoint.
-- CI should validate only the maintained generator mainline.
-- Build, metadata, diff, upgrade, and generation regressions should stay in the root repository test matrix.
+- Root `go test ./...` is the fast-lane regression entrypoint.
+- Fast CI should validate the maintained generator mainline without external database services.
+- Heavy black-box, runtime database, and real build artifact checks belong to the explicit integration lane.
+- Release gates should require the integration lane, but routine PR validation should not.
 
 ## Scope Rules
 

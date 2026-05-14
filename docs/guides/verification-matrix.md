@@ -1,25 +1,52 @@
 # Verification Matrix Guide
 
-Phase 9 extends generator verification beyond stack selection.
+`fiberx` uses two verification lanes so daily work does not pay the cost of the full black-box and database matrix.
 
-## Covered By Regression Tests
+## Fast Lane
 
-- default stack generation for all four presets
-- compatibility stack generation for all four presets
-- black-box HTTP checks for `medium` and `heavy` across the full stack matrix
-- black-box checks for `light` and `extra-light` on default and legacy stacks
-- startup smoke checks for the mixed lightweight combinations
-- generated docs and config profile existence
-- missing-route JSON `404` envelope behavior
+The default fast lane is the contract for local development and PR CI:
 
-## Manual Smoke Suggestions
+```bash
+go test ./...
+go run ./cmd/fiberx validate
+go run ./cmd/fiberx doctor
+```
 
-After generation, the minimum manual pass is:
+Fast lane coverage includes:
 
-1. `go test ./...`
-2. `go run . services`
-3. `go run . serve --config config/server.dev.yaml`
-4. `GET /healthz`
-5. `GET /docs/openapi.yaml` when docs are expected
-6. `GET /ui` when embedded UI is expected
-7. `GET /metrics` on `heavy`
+- CLI output and validation contracts
+- generation contract tests across presets, capabilities, and runtime selections
+- metadata, inspect, diff, and upgrade main paths
+- representative generated project compile smoke for `extra-light default` and `heavy default`
+- dry-run build planning and build config validation
+
+Fast lane does not require PostgreSQL or MySQL services.
+
+## Integration Lane
+
+The integration lane is reserved for heavy end-to-end coverage:
+
+```bash
+go test -tags=integration ./cmd/fiberx ./internal/core
+```
+
+Integration lane coverage includes:
+
+- generated service startup and HTTP black-box checks
+- runtime database matrix across SQLite, PostgreSQL, and MySQL
+- generated CRUD, docs, UI, metrics, gzip, and scheduler paths
+- real CLI build artifact generation, archive output, release metadata, and hook execution behavior
+
+When PostgreSQL or MySQL scenarios are needed, provide `FIBERX_TEST_PGSQL_DSN` and `FIBERX_TEST_MYSQL_DSN` or use the GitHub Actions integration workflow.
+
+## CI Mapping
+
+- `.github/workflows/ci.yml` runs the fast lane on pull requests and pushes to `dev` / `main`.
+- `.github/workflows/integration.yml` runs the integration lane on a nightly schedule and on manual dispatch.
+- Release preparation should treat the integration lane as an explicit gate instead of making every PR pay the full cost.
+
+## Sample Boundary
+
+- `generator/` remains the maintained source of truth.
+- `sample/` is reference-only material for human comparison, screenshots, and discussion.
+- A `sample/` drift is not automatically a generator bug unless it contradicts the maintained generator surface or current regression contract.

@@ -17,11 +17,11 @@
 1. Make focused changes.
 2. Keep user-facing contracts stable unless the change intentionally updates them.
 3. Update docs when the CLI, generated scaffold, or release surface changes.
-4. Run the relevant tests before submitting work.
+4. Run the relevant verification lane before submitting work.
 
 ## Local Checks
 
-Minimum checks for most changes:
+Default local verification is the fast lane:
 
 ```bash
 go test ./...
@@ -29,11 +29,18 @@ go run ./cmd/fiberx validate
 go run ./cmd/fiberx doctor
 ```
 
-If the change affects generated output, also generate a sample project and verify the touched files.
+Use the integration lane only when the change affects generated service startup, runtime database behavior, real build artifacts, or other heavy end-to-end paths:
+
+```bash
+go test -tags=integration ./cmd/fiberx ./internal/core
+```
+
+If the integration lane touches PostgreSQL or MySQL scenarios, provide the matching `FIBERX_TEST_*` DSNs or run through the GitHub Actions integration workflow.
 
 ## Repository Notes
 
-- `sample/` is reference material and test-facing comparison content.
+- `generator/` is the maintained source of truth for scaffold behavior.
+- `sample/` is reference-only material for comparison and discussion; it is not the source of truth and is not required to stay perfectly synchronized with every template change.
 - `output/` is local scratch space and should stay out of version control except for `.gitkeep`.
 - Generated release binaries should not be committed.
 
