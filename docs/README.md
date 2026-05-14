@@ -8,13 +8,15 @@ This directory contains the maintained design notes, guides, and release roadmap
 - `v0.1.1`: completed
 - `v0.1.2`: completed
 - `v0.1.3`: completed
-- `v0.1.4`: in progress
+- `v0.1.4`: completed
+- `v0.1.5`: in progress
 
 ## Current Scope
 
 - `v0.1.2`: shared scaffold uplift, timeout routing, response compatibility, and release-facing documentation
 - `v0.1.3`: CLI preview UX, build safety switches, layered doctor output, explain matrix, and scaffold hardening
-- `v0.1.4`: common error and response layer polish for generated `light / medium / heavy` scaffolds
+- `v0.1.4`: common error and response layer consolidation plus `AppModules` route entry for generated `light / medium / heavy` scaffolds
+- `v0.1.5`: release wording alignment across CLI outputs, changelog, usage guide, and top-level docs
 
 ## Core Documents
 

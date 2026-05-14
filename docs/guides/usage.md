@@ -4,8 +4,8 @@ This guide explains how to use the current `fiberx` generator from the repositor
 
 ## Release Snapshot
 
-- current release: `v0.1.2`
-- current milestone: `v0.1.3`
+- current release: `v0.1.4`
+- current milestone: `v0.1.5`
 - generatable presets: `heavy`, `medium`, `light`, `extra-light`
 - implemented capabilities: `redis`, `swagger`, `embedded-ui`
 - default stack: `fiber-v3 + cobra + viper`
@@ -155,7 +155,7 @@ Typical default `validate` output:
 
 ```text
 fiberx validate: ok
-release: v0.1.2
+release: v0.1.4
 generator: <version> (<commit>)
 presets: heavy,medium,light,extra-light
 capabilities: redis,swagger,embedded-ui
@@ -169,7 +169,7 @@ Typical default `doctor` output:
 fiberx doctor
 mode: generator
 generator: <version> (<commit>)
-release: v0.1.2
+release: v0.1.4
 go: <runtime>
 workspace: <cwd>
 manifest root: <root>

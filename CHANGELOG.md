@@ -1,5 +1,30 @@
 # Changelog
 
+## Unreleased
+
+- Aligned CLI help, validate, and doctor release wording around `v0.1.4` as the current completed release and `v0.1.5` as the active milestone
+- Synced release-facing docs across `README`, `README_zh`, `docs/README.md`, `docs/guides/usage.md`, and `docs/roadmap/roadmap.md`
+- Refreshed audit notes to match the current post-`v0.1.4` repository state
+
+## v0.1.4
+
+- Unified the generated `light`, `medium`, and `heavy` scaffold error model around `APIError` / `AppError`
+- Unified the generated response helper flow around `common.Success`, `common.Error`, and `NewResponse`
+- Simplified generated controller error handling and kept service error mapping on the common response path
+- Routed generated application registration through `AppModules` to avoid route-registration sprawl
+- Kept `extra-light` intentionally minimal while hardening regression coverage for the shared scaffold path
+
+## v0.1.3
+
+- Added generation plan preview with `new/init --print-plan [--json]`
+- Added build hook safety switches such as `build --no-hooks` and `build --yes`
+- Added layered `doctor` modes for generator, project, and standalone environments
+- Added `explain matrix` for preset and capability visibility
+- Improved verbose output structure for `validate`, `doctor`, and `explain matrix`
+- Hardened generated default error responses and multi-handler timeout coverage
+- Fixed explicit `false` config override handling and removed empty default hook lists from generated `fiberx.yaml`
+- Simplified generated business-module initialization and auto-created SQLite parent directories for default paths
+
 ## v0.1.2
 
 - Added shared scaffold constants for `light`, `medium`, and `heavy`

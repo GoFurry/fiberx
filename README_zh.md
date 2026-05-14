@@ -17,7 +17,8 @@
 - `v0.1.1`：已完成
 - `v0.1.2`：已完成
 - `v0.1.3`：已完成
-- `v0.1.4`：进行中
+- `v0.1.4`：已完成
+- `v0.1.5`：进行中
 
 ## 文档入口
 
@@ -76,15 +77,25 @@ go run ./cmd/fiberx build --profile prod
 - `sample/`：参考快照和测试对照，不是当前正式维护的 generator 主线
 - `output/`：本地生成产物与临时二进制目录，除 `.gitkeep` 外默认不纳入 Git
 
-## v0.1.4 当前范围
+## v0.1.4 发布范围
 
-`v0.1.4` 聚焦默认骨架公共层收口：
+`v0.1.4` 已完成默认骨架公共层收口：
 
 - 统一 `light / medium / heavy` 的 `pkg/common/error.go`
 - 统一 `pkg/common/response.go` 的响应写出路径
 - 清理默认 controller 的重复错误分支
 - 调整业务路由入口，让 `api(...)` 接收 `AppModules`
 - 保持 `extra-light` 最小面，不跟随这一版变重
+- 补强共享骨架路径上的生成回归
+
+## v0.1.5 当前范围
+
+`v0.1.5` 当前聚焦发布表述与仓库状态对齐：
+
+- 统一 CLI help、`validate`、`doctor` 的 release 文案
+- 补齐 `CHANGELOG.md` 与发布面文档
+- 让 README、文档索引、使用指南、路线图保持一致
+- 继续澄清 generator 主线与参考快照之间的边界
 
 ## Build Hook 安全提示
 

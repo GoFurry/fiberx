@@ -26,8 +26,9 @@ import (
 )
 
 const (
-	currentRelease = "v0.1.2"
-	nextRelease    = "v0.1.3"
+	currentRelease   = "v0.1.4"
+	nextRelease      = "v0.1.5"
+	nextReleaseFocus = "release metadata sync, changelog and usage updates, CLI output alignment, and release-surface consistency"
 )
 
 func main() {
@@ -746,8 +747,8 @@ func printUsage(w io.Writer) {
 	fmt.Fprintf(w, "Default logger/database/data access: %s / %s / %s\n", stack.DefaultLogger(), stack.DefaultDB(), stack.DefaultDataAccess())
 	fmt.Fprintf(w, "Default JSON backend: %s\n", stack.DefaultJSONLib())
 	fmt.Fprintln(w, "Capability policy: swagger and embedded-ui default on medium/heavy, optional on light; redis optional on medium/heavy only.")
-	fmt.Fprintln(w, "Release: v0.1.2 completed.")
-	fmt.Fprintln(w, "Current milestone: v0.1.3 in progress for CLI preview, build safety switches, doctor layering, explain matrix, and scaffold hardening.")
+	fmt.Fprintf(w, "Release: %s completed.\n", currentRelease)
+	fmt.Fprintf(w, "Current milestone: %s in progress for %s.\n", nextRelease, nextReleaseFocus)
 	fmt.Fprintln(w, "Use `fiberx doctor --verbose` or `fiberx validate --verbose` for full diagnostics.")
 }
 
@@ -761,8 +762,8 @@ func printValidateVerbose(w io.Writer, catalog manifest.Catalog) {
 	fmt.Fprintln(w, "completed production track: heavy")
 	fmt.Fprintln(w)
 	printSection(w, "release")
-	fmt.Fprintln(w, "release: v0.1.2")
-	fmt.Fprintln(w, "current milestone: v0.1.3")
+	fmt.Fprintf(w, "release: %s\n", currentRelease)
+	fmt.Fprintf(w, "current milestone: %s\n", nextRelease)
 	fmt.Fprintln(w, "generator mainline: pure generator repository")
 	fmt.Fprintln(w)
 	printSection(w, "capabilities")

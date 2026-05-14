@@ -20,7 +20,8 @@ The repository is intentionally focused on the generator mainline itself: assets
 - `v0.1.1`: completed
 - `v0.1.2`: completed
 - `v0.1.3`: completed
-- `v0.1.4`: in progress
+- `v0.1.4`: completed
+- `v0.1.5`: in progress
 
 ## Docs
 
@@ -94,15 +95,24 @@ go run ./cmd/fiberx build --profile prod
 - lightweight explicit service initialization in generated business modules
 - SQLite parent directory creation for default database paths
 
-## v0.1.4 Current Scope
+## v0.1.4 Release Scope
 
-`v0.1.4` is a scaffold-polish milestone focused on the generated common layer:
+`v0.1.4` completed the generated common-layer consolidation work:
 
-- refine the shared error and response layer for `light`, `medium`, and `heavy`
-- simplify default controller error handling around the common response flow
-- route top-level API registration through `AppModules` to avoid growth-driven router sprawl
-- keep `extra-light` intentionally minimal
-- continue hardening generation regressions without expanding the capability surface
+- unified the shared error and response layer for `light`, `medium`, and `heavy`
+- simplified default controller error handling around the common response flow
+- routed top-level API registration through `AppModules` to avoid growth-driven router sprawl
+- kept `extra-light` intentionally minimal
+- hardened generation regressions around the shared scaffold path
+
+## v0.1.5 Current Scope
+
+`v0.1.5` is the current release-surface synchronization milestone:
+
+- align CLI help, validate, and doctor release wording with the actual repository state
+- refresh `CHANGELOG.md` and release-facing docs
+- keep README, docs index, usage guide, and roadmap in sync
+- reduce confusion between the maintained generator mainline and reference-only snapshots
 
 ## Build Hook Safety
 
